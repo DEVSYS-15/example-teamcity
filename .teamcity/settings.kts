@@ -31,7 +31,7 @@ project {
     buildType(BuildPlainDoll)
 
     params {
-        text(readOnly = true, allowEmpty = true)
+        text("cat2", "Ziratestel", readOnly = true, allowEmpty = true)
     }
 }
 
@@ -51,7 +51,7 @@ object BuildPlainDoll : BuildType({
 
     steps {
         maven {
-
+            name = "test"
             conditions {
                 doesNotContain("teamcity.build.branch", "master")
             }
