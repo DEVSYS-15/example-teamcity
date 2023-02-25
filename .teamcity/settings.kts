@@ -24,14 +24,14 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 'Debug' option is available in the context menu for the task.
 */
 
-version = "2023.03"
+version = "2022.04"
 
 project {
 
     buildType(BuildPlainDoll)
 
     params {
-        text("cat2", "Ziratestel", readOnly = true, allowEmpty = true)
+        text("cat2", "test", readOnly = true, allowEmpty = true)
     }
 }
 
