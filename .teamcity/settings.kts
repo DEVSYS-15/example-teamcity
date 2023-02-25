@@ -50,7 +50,7 @@ object BuildPlainDoll : BuildType({
 
     steps {
         maven {
-            name = "Test"
+            
             conditions {
                 doesNotContain("teamcity.build.branch", "master")
             }
