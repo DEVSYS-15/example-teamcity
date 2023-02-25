@@ -24,14 +24,14 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 'Debug' option is available in the context menu for the task.
 */
 
-version = "2022.04"
+version = "2023.03"
 
 project {
 
     buildType(BuildPlainDoll)
 
     params {
-        text("cat2", "Zirael", readOnly = true, allowEmpty = true)
+        text(readOnly = true, allowEmpty = true)
     }
 }
 
@@ -41,8 +41,7 @@ object BuildPlainDoll : BuildType({
     artifactRules = "target/*.jar => target"
 
     params {
-        text("name", "alexey", allowEmpty = true)
-        param("env.cat", "Wizard")
+        text("name", "Sergei", allowEmpty = true)
     }
 
     vcs {
@@ -51,7 +50,7 @@ object BuildPlainDoll : BuildType({
 
     steps {
         maven {
-
+            name = "Test"
             conditions {
                 doesNotContain("teamcity.build.branch", "master")
             }
@@ -65,7 +64,7 @@ object BuildPlainDoll : BuildType({
                 contains("teamcity.build.branch", "master")
             }
             goals = "clean deploy"
-            userSettingsSelection = "settings.xml"
+            userSettingsSelection = ".teamcity/pluginData/_Self/mavenSettings/settings.xml"
         }
     }
 
