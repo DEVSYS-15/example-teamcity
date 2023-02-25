@@ -42,6 +42,7 @@ object BuildPlainDoll : BuildType({
 
     params {
         text("name", "Sergei", allowEmpty = true)
+        param("env.cat", "Wizard")
     }
 
     vcs {
@@ -50,7 +51,7 @@ object BuildPlainDoll : BuildType({
 
     steps {
         maven {
-            
+
             conditions {
                 doesNotContain("teamcity.build.branch", "master")
             }
@@ -64,7 +65,7 @@ object BuildPlainDoll : BuildType({
                 contains("teamcity.build.branch", "master")
             }
             goals = "clean deploy"
-            userSettingsSelection = ".teamcity/pluginData/_Self/mavenSettings/settings.xml"
+            uuserSettingsSelection = ".teamcity/pluginData/_Self/mavenSettings/settings.xml"
         }
     }
 
