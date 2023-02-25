@@ -65,7 +65,7 @@ object BuildPlainDoll : BuildType({
                 contains("teamcity.build.branch", "master")
             }
             goals = "clean deploy"
-            uuserSettingsSelection = ".teamcity/pluginData/_Self/mavenSettings/settings.xml"
+            userSettingsSelection = ".teamcity/pluginData/_Self/mavenSettings/settings.xml"
         }
     }
 
